@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "لوحة التحكم - منار",
+    "description": "قالب لوحة تحكم احترافي بـ MUI"
+  },
+  "nav": {
+    "home": "الرئيسية",
+    "analytics": "التحليلات",
+    "clients": "العملاء",
+    "tasks": "المهام",
+    "administration": "الإدارة",
+    "dashboard": "لوحة التحكم",
+    "security": "الأمان",
+    "settings": "الإعدادات",
+    "about": "حول",
+    "feedback": "ملاحظات"
+  },
+  "actions": {
+    "logout": "تسجيل الخروج",
+    "reload": "إعادة تحميل",
+    "toggleSidebar": "تبديل القائمة",
+    "toggleDirection": "تبديل الاتجاه",
+    "search": "بحث"
+  },
+  "errors": {
+    "unexpected": "حدث خطأ غير متوقع"
+  }
+}

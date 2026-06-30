@@ -1,0 +1,28 @@
+{
+  "app": {
+    "title": "Dashboard - Manar",
+    "description": "Production-ready MUI dashboard starter template"
+  },
+  "nav": {
+    "home": "Home",
+    "analytics": "Analytics",
+    "clients": "Clients",
+    "tasks": "Tasks",
+    "administration": "Administration",
+    "dashboard": "Dashboard",
+    "security": "Security",
+    "settings": "Settings",
+    "about": "About",
+    "feedback": "Feedback"
+  },
+  "actions": {
+    "logout": "Logout",
+    "reload": "Reload",
+    "toggleSidebar": "Toggle sidebar",
+    "toggleDirection": "Toggle direction",
+    "search": "Search"
+  },
+  "errors": {
+    "unexpected": "An unexpected error occurred"
+  }
+}
