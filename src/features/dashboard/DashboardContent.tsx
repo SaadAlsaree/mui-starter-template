@@ -13,6 +13,7 @@ import AppNavbar from '@/features/layout/navbar/AppNavbar';
 import Header from '@/features/layout/header/Header';
 import SideMenu from '@/features/layout/sidebar/SideMenu';
 import AppTheme from '@/theme/AppTheme';
+import AppProviders from '@/features/providers/AppProviders';
 import { RbacProvider } from '@/features/auth/rbac';
 import {
   chartsCustomizations,
@@ -64,38 +65,40 @@ export default function Dashboard() {
 
   return (
     <AppTheme themeComponents={xThemeComponents}>
-      <RbacProvider roles={['admin']}>
-        <CssBaseline enableColorScheme />
-        <Box sx={{ display: 'flex', minHeight: '100vh' }}>
-          <SideMenu open={sidebarOpen} />
+      <AppProviders>
+        <RbacProvider roles={['admin']}>
+          <CssBaseline enableColorScheme />
+          <Box sx={{ display: 'flex', minHeight: '100vh' }}>
+            <SideMenu open={sidebarOpen} />
 
-          <Header
-            sidebarOpen={sidebarOpen}
-            onToggleSidebar={toggleSidebar}
-            drawerWidth={sidebarOpen ? DRAWER_WIDTH : MINI_DRAWER_WIDTH}
-          />
+            <Header
+              sidebarOpen={sidebarOpen}
+              onToggleSidebar={toggleSidebar}
+              drawerWidth={sidebarOpen ? DRAWER_WIDTH : MINI_DRAWER_WIDTH}
+            />
 
-          <AppNavbar />
+            <AppNavbar />
 
-          <Box
-            component="main"
-            sx={(theme) => ({
-              flexGrow: 1,
-              overflow: 'auto',
-              minHeight: '100vh',
-              backgroundColor: theme.vars
-                ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
-                : alpha(theme.palette.background.default, 1),
-            })}
-          >
-            <Box sx={{ display: { xs: 'block', md: 'none' }, height: 56 }} />
-            <Box sx={{ display: { xs: 'none', md: 'block' }, height: 48 }} />
-            <Box sx={{ px: 3, pb: 5 }}>
-              <MainGrid />
+            <Box
+              component="main"
+              sx={(theme) => ({
+                flexGrow: 1,
+                overflow: 'auto',
+                minHeight: '100vh',
+                backgroundColor: theme.vars
+                  ? `rgba(${theme.vars.palette.background.defaultChannel} / 1)`
+                  : alpha(theme.palette.background.default, 1),
+              })}
+            >
+              <Box sx={{ display: { xs: 'block', md: 'none' }, height: 56 }} />
+              <Box sx={{ display: { xs: 'none', md: 'block' }, height: 48 }} />
+              <Box sx={{ px: 3, pb: 5 }}>
+                <MainGrid />
+              </Box>
             </Box>
           </Box>
-        </Box>
-      </RbacProvider>
+        </RbacProvider>
+      </AppProviders>
     </AppTheme>
   );
 }
