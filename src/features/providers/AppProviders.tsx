@@ -1,7 +1,9 @@
+import AxeProvider from '@/features/a11y/AxeProvider';
 'use client';
 
 import * as React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import dynamic from 'next/dynamic';
 import { Toaster } from 'sonner';
 import { ErrorBoundary } from 'react-error-boundary';
 import type { FallbackProps } from 'react-error-boundary';
@@ -44,13 +46,13 @@ function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
       }}
     >
       <Alert severity="error" sx={{ maxWidth: 500 }}>
-        <Typography variant="h6">حدث خطأ غير متوقع</Typography>
+        <Typography variant="h6">Ø­Ø¯Ø« Ø®Ø·Ø£ ØºÙŠØ± Ù…ØªÙˆÙ‚Ø¹</Typography>
         <Typography variant="body2" sx={{ mt: 1, fontFamily: 'monospace' }}>
           {error instanceof Error ? error.message : String(error)}
         </Typography>
       </Alert>
       <Button variant="contained" onClick={resetErrorBoundary}>
-        إعادة تحميل
+        Ø¥Ø¹Ø§Ø¯Ø© ØªØ­Ù…ÙŠÙ„
       </Button>
     </Box>
   );
@@ -67,6 +69,7 @@ export default function AppProviders({ children }: AppProvidersProps) {
     <ErrorBoundary FallbackComponent={ErrorFallback}>
       <QueryClientProvider client={queryClient}>
         {children}
+        <AxeProvider />
         <Toaster
           position="top-right"
           richColors
